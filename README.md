@@ -61,7 +61,7 @@ or completely remove it with:
 $ vagrant destroy
 ```
 
-If you destroy the VM, a new one will be pulled when you run "vagrant up" the next time. Your code stays
+If you destroy the VM, a new one will be provisioned when you run "vagrant up" the next time. Your code stays
 in the directory you created on your local machine; only the VM is affected with the vagrant commands.
 
 Much more can be done with Vagrant, which you can learn about from the <a href="http://docs.vagrantup.com/v2/">Vagrant Documentation</a>.
@@ -70,16 +70,16 @@ Much more can be done with Vagrant, which you can learn about from the <a href="
 
 It may be easier to run a physical, non-virtual machine when it requires connections to various hardware devices. For this machine, you may use the same provisioning scripts that the Vagrant boxes use.
 
-For example, let's say you already have a computer running Ubuntu 12.04 LTS, x86_64, with a full desktop install, and you want to install ROS on it to match what we're using on other machines or VMs. You may do this in a root shell:
+For example, let's say you already have a computer running Ubuntu 12.04 LTS, x86_64, with a full desktop install, and you want to install ROS on it to match what we're using on other machines or VMs. You may paste this to a root shell command line:
 
 ```sh
-# curl <url> | sh
+# curl https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/build_hydro_full.sh | sh
 ```
 
 For a physical machine with a stripped down install of Ubuntu 12.04 LTS, x86_64, you may prefer to do this:
 
 ```sh
-# curl <url> | sh
+# curl https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/build_hydro_base.sh | sh
 ```
 
 ### License

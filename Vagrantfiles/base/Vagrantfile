@@ -10,6 +10,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "hashicorp/precise64"
 
   # ROS Hydro base is installed by a very simple shell script
-  config.vm.provision :shell, path: "http://github.com/encs-humanoid/devops/provision/build_hydro_base.sh"
+  config.vm.provision :shell, path: "https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/build_hydro_base.sh"
 
 end

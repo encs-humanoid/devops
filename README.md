@@ -68,6 +68,8 @@ Much more can be done with Vagrant, which you can learn about from the <a href="
 
 ### Configuring a bare metal machine
 
+(Warning - this is not ready to use just yet.)
+
 It may be easier to run a physical, non-virtual machine when it requires connections to various hardware devices. For this machine, you may use the same provisioning scripts that the Vagrant boxes use.
 
 For example, let's say you already have a computer running Ubuntu 12.04 LTS, x86_64, with a full desktop install, and you want to install ROS on it to match what we're using on other machines or VMs. You may paste this to a root shell command line:

@@ -1,0 +1,15 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  # We'll use a generic Ubuntu 12.04 LTS box
+  config.vm.box = "hashicorp/precise64"
+
+  # ROS Hydro base is installed by a very simple shell script
+  config.vm.provision :shell, path: "http://github.com/encs-humanoid/devops/provision/build_hydro_base.sh"
+
+end

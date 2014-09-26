@@ -78,7 +78,7 @@ in the directory you created on your local machine; only the VM is affected with
 
 Much more can be done with Vagrant, which you can learn about from the <a href="http://docs.vagrantup.com/v2/">Vagrant Documentation</a>.
 
-### Configuring a bare metal machine
+### Configuring a physical  machine
 
 (Warning - this is not ready to use just yet.)
 

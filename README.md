@@ -30,9 +30,21 @@ The VMs we will work with contain Ubuntu 12.04 LTS, on x86_64, with ROS Hydro. T
 
 ##### Developing your ROS code with a Vagrant VM
 
-Create a directory for
-your code on your physical machine somewhere, and download the appropriate Vagrantfile from the Vagrantfiles
-directory above into your code directory. Go to your code directory and type:
+Create a directory for your code on your physical machine somewhere, and cd to it.
+
+If you want the full desktop version of the ROS virtual machine, you can copy this to your command line and run it from within your code directory in order to fetch the appropriate Vagrantfile:
+
+```sh
+$ wget https://raw.githubusercontent.com/encs-humanoid/devops/master/Vagrantfiles/desktop-full/Vagrantfile
+```
+
+For those who prefer the base install, you can run this instead:
+
+```sh
+$ wget https://raw.githubusercontent.com/encs-humanoid/devops/master/Vagrantfiles/base/Vagrantfile
+```
+
+Go to your code directory and type:
 
 ```sh
 $ vagrant up

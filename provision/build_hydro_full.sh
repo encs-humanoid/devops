@@ -60,7 +60,7 @@ echo
 
 # add anything you think should be available on the box
 echo "Installing extras..."
-apt-get -y install tree mg
+apt-get -y install tree mg screen
 echo
 echo "ROS install completed."
 echo

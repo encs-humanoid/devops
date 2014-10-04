@@ -39,9 +39,18 @@ EOF
 echo
 
 echo "Adding the ROS setup to the vagrant user's bashrc..."
-echo "source /opt/ros/hydro/setup.bash" >> /home/vagrant/.bashrc
+cat >> /home/vagrant/.bashrc <<EOF
+
+# always source the ROS setup
+source /opt/ros/hydro/setup.bash
+
+# set local ROS-related environment variables
+if [ -f /vagrant/ros_local.cfg ]; then
+    source /vagrant/ros_local.cfg
+fi
+EOF 
 source /home/vagrant/.bashrc
-echo
+echo 
 
 echo "Installing python-rosinstall..."
 apt-get -y install python-rosinstall

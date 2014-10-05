@@ -32,13 +32,13 @@ rosdep init
 echo
 
 echo "Running rosdep update as vagrant user..."
-su - vagrant <<EOF
+su - vagrant <<END
 rosdep update
-EOF
+END
 echo
 
 echo "Adding the ROS setup to the vagrant user's bashrc..."
-cat >> /home/vagrant/.bashrc << EOF
+cat >> /home/vagrant/.bashrc <<END
 
 # always source the ROS setup
 source /opt/ros/hydro/setup.bash
@@ -47,10 +47,10 @@ source /opt/ros/hydro/setup.bash
 if [ -f /vagrant/ros_local.cfg ]; then
     source /vagrant/ros_local.cfg
 fi
-EOF 
+END
 
 source /home/vagrant/.bashrc
-echo 
+echo
 
 echo "Installing python-rosinstall..."
 apt-get -y install python-rosinstall

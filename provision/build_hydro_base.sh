@@ -53,8 +53,8 @@ echo "Installing python-rosinstall..."
 apt-get -y install python-rosinstall
 echo
 
-echo "Installing make..."
-apt-get -y install make
+echo "Installing needed extras..."
+apt-get -y install make git
 echo
 
 # add anything you think should be available on the box

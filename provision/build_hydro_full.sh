@@ -60,8 +60,8 @@ echo "Enabling temporary workaround for 3D programs..."
 echo "export LIBGL_ALWAYS_SOFTWARE=1" >> /etc/bash.bashrc
 echo
 
-echo "Installing make..."
-apt-get -y install make
+echo "Installing needed extras..."
+apt-get -y install make git
 echo
 
 # # rosjava

@@ -3,9 +3,8 @@
 # based on the install procedure from http://wiki.ros.org/hydro/Installation/Ubuntu
 
 echo "Setting timezone..."
-cat > /etc/timezone <<EOF
-America/New_York
-EOF
+cp /usr/share/zoneinfo/America/New_York /etc/localtime
+echo
 
 echo "Getting the ROS latest list..."
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'

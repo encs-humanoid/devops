@@ -36,7 +36,7 @@ EOF
 echo
 
 echo "Adding the ROS setup to the vagrant user's bashrc..."
-cat >> /home/vagrant/.bashrc <<EOF
+cat >> /home/vagrant/.bashrc << EOF
 
 # always source the ROS setup
 source /opt/ros/hydro/setup.bash
@@ -46,6 +46,7 @@ if [ -f /vagrant/ros_local.cfg ]; then
     source /vagrant/ros_local.cfg
 fi
 EOF
+
 source /home/vagrant/.bashrc
 echo
 

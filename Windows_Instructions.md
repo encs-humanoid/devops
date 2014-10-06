@@ -7,8 +7,6 @@ Configuration management for ROS/Linux machine instances, using Vagrant for deve
 
 Create a directory for your code on your physical machine somewhere, and cd to it.
 
-If you want the full desktop version of the ROS virtual machine, you can copy this to your command line and run it from within your code directory in order to fetch the appropriate Vagrantfile:
-
 <a href="https://raw.githubusercontent.com/encs-humanoid/devops/master/Vagrantfiles/desktop-full/Vagrantfile">Download the appropriate Vagrantfile</a> and place it in your code directory.
 
 Go to your code directory and type:

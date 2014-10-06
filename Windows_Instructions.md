@@ -11,10 +11,6 @@ If you want the full desktop version of the ROS virtual machine, you can copy th
 
 <a href="https://raw.githubusercontent.com/encs-humanoid/devops/master/Vagrantfiles/desktop-full/Vagrantfile">Download the appropriate Vagrantfile</a> and place it in your code directory.
 
-```sh
-$ wget 
-```
-
 Go to your code directory and type:
 
 ```sh

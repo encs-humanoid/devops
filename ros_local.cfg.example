@@ -1,6 +1,6 @@
 # ROS local configuration - for personalized customizations
 
-# This file is always sourced by .bashrc in the IEEE Humanoid VMs
+# If this file is /vagrant/ros_local.cfg, then it is always sourced by .bashrc in the IEEE Humanoid VMs
 
 # set local ROS environment variables
 export ROS_MASTER_URI=http://192.168.5.200:11311

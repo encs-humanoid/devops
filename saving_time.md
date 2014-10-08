@@ -51,7 +51,7 @@ If you are using one of the full desktop VMs, you will want to put <a href="http
 On a command line, within your vagrant/code directory, run
 
 ```sh
-vagrant package --output <my-ros-box-name>.box --vagrantfile ros-desktop.config
+vagrant package --output <my-ros-box-name>.box --vagrantfile ros_desktop.config
 ```
 
 After completion, you should have a box file in your vagrant directory.
@@ -62,7 +62,7 @@ Import this box into your local vagrant box library by running this command:
 vagrant box add <my-ros-box-name>.box --name <my-ros-box-name>
 ```
 
-You can delete the box file and the ros-desktop.config file from your vagrant/code directory at this point, if you want. Copies have been stored elsewhere.
+You can delete the box file and the ros_desktop.config file from your vagrant/code directory at this point, if you want. Copies have been stored elsewhere.
 
 Now, at last, you can reuse the box in your project. To do this, change your Vagrantfile.
 

@@ -34,10 +34,10 @@ The VMs we will work with contain Ubuntu 12.04 LTS, on x86_64, with ROS Hydro. T
 
 [Instructions for Macintosh and Linux](MacLinux_Instructions.md)
 
+[Saving Time by Repackaging a Vagrant Box](saving_time.md)
+
 Instructions for a physical machine (pending)
 
 ### License
 
 pending...
-
-

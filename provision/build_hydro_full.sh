@@ -1,47 +1,53 @@
 #!/usr/bin/env bash
 
-# based on the install procedure from http://wiki.ros.org/hydro/Installation/Ubuntu
+based on the install procedure from http://wiki.ros.org/hydro/Installation/Ubuntu
 
 echo "Setting timezone..."
-cp /usr/share/zoneinfo/America/New_York /etc/localtime
+sudo cp /usr/share/zoneinfo/America/New_York /etc/localtime
 echo
 
 echo "Getting the ROS latest list..."
-sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
 echo
 
 echo "Adding the ROS key..."
-wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | apt-key add -
+wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add -
 echo
 
 echo "Updating the package list..."
 # next, avoid hddtemp prompt
 echo "hddtemp hddtemp/daemon boolean false" | debconf-set-selections
-apt-get -y update
+sudo apt-get -y update
 echo
 
 # for ROS full desktop:
 echo "Installing the ROS Hydro full desktop..."
-apt-get -y install ros-hydro-desktop-full
+sudo apt-get -y install ros-hydro-desktop-full
 echo
 
-apt-cache search ros-hydro
+sudo apt-cache search ros-hydro
 
 echo "Running rosdep init..."
-rosdep init
+sudo rosdep init
 echo
 
-echo "Running rosdep update as vagrant user..."
-su - vagrant <<END
+USER=`whoami`
+echo "Running rosdep update as $USER..."
+#su - $USER <<END
 rosdep update
-END
+#END
 echo
 
-echo "Adding the ROS setup to the vagrant user's bashrc..."
-cat >> /home/vagrant/.bashrc <<END
+echo "Adding the ROS setup to $USER's bashrc..."
+cat >> $HOME/.bashrc <<END
 
 # always source the ROS setup
 source /opt/ros/hydro/setup.bash
+END
+
+if [ -d /vagrant ];then
+
+cat >> $HOME/.bashrc <<END
 
 # set local ROS-related environment variables
 if [ -f /vagrant/ros_local.cfg ]; then
@@ -49,20 +55,24 @@ if [ -f /vagrant/ros_local.cfg ]; then
 fi
 END
 
-source /home/vagrant/.bashrc
+fi
+
+source $HOME/.bashrc
 echo
 
 echo "Installing python-rosinstall..."
-apt-get -y install python-rosinstall
+sudo apt-get -y install python-rosinstall
 echo
 
-# This will work, but 3D programs will be very slow
-echo "Enabling temporary workaround for 3D programs..."
-echo "export LIBGL_ALWAYS_SOFTWARE=1" >> /etc/bash.bashrc
-echo
+# Next section is a hack to let some 3D programs work under Virtualbox
+# when device drivers aren't working correctly.
+# This will work, but 3D programs will be very slow.
+#echo "Enabling temporary workaround for 3D programs..."
+#echo "export LIBGL_ALWAYS_SOFTWARE=1" >> /etc/bash.bashrc
+#echo
 
 echo "Installing needed extras..."
-apt-get -y install make git
+sudo apt-get -y install make git
 echo
 
 # # rosjava
@@ -73,7 +83,7 @@ echo
 
 # add anything you think should be available on the box
 echo "Installing extras..."
-apt-get -y install tree mg screen
+sudo apt-get -y install tree mg screen
 echo
 echo "ROS install completed."
 echo

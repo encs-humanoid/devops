@@ -38,11 +38,11 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 40 --slave 
 yes '2' | sudo update-alternatives --config gcc
 
 echo "Cloning Nupic repo..."
-git clone https://github.com/numenta/nupic.git /home/vagrant/nupic
+git clone https://github.com/numenta/nupic.git $HOME/nupic
 echo
 
 echo "Setting up for a Nupic build..."
-export NUPIC=/home/vagrant/nupic
+export NUPIC=$HOME/nupic
 #sudo pip install --user -r $NUPIC/external/common/requirements.txt
 sudo pip install -r $NUPIC/external/common/requirements.txt
 echo

@@ -8,7 +8,7 @@
 #===================================================================
 
 echo "Installing useful extra packages..."
-sudo apt-get install expect-dev -y
+sudo apt-get install expect-dev git -y
 echo
 
 echo "Installing NLTK prerequisites..."
@@ -43,13 +43,11 @@ echo
 
 echo "Setting up for a Nupic build..."
 export NUPIC=$HOME/nupic
-#sudo pip install --user -r $NUPIC/external/common/requirements.txt
 sudo pip install -r $NUPIC/external/common/requirements.txt
 echo
 
 echo "Building Nupic..."
 cd $NUPIC
-#sudo python setup.py install --user
 sudo python setup.py install
 echo
 

@@ -1,43 +1,38 @@
 ENCS Humanoid / Devops
 ======
 
-Configuration management for ROS/Linux machine instances, using Vagrant for development
 
-### What is Vagrant?
 
-You probably already use virtual machines in your work, either in the cloud or on your own computer so that you can encapsulate a server into a convenient object that can be cloned, updated, distributed easily, and your operating system can be version-controlled much like the software in your other projects. This means several developers can each have a personal copy of the platform that will be used in production deployment, down to configurations and packages. And this is a boon: much time will be saved when the different pieces of a project don't have to clash because they were developed on slightly different platforms.
+### A System for Development
 
-So, if your team members each develop against copies of the same platform, you win.
+We are standardizing our systems and subsystems to use the <a href="http://wiki.ros.org/hydro">Hydro</a> release of the <a href="http://ros.org">Robot Operating System (ROS)</a>. Because Ubuntu 12.04 LTS is the only Ubuntu OS that is both still supported and compatible with Hydro, we are asking that everyone do their coding on <em>Ubuntu 12.04 LTS x86_64 Desktop</em> as much as is feasible. It can be installed on VMWare, Virtualbox, or a baremetal computer.
 
-So what is Vagrant? Vagrant takes care of much of the grunt work of farming VMs, so that you can develop your robot, your vision system, your AI, and waste less time configuring and copying VMs around. 
+We will run multiple distributed ROS systems in communication with one another, with different machines for different supporting tasks.
 
-Vagrant leverages VirtualBox, and on top of it:
+<hr>
 
-+ Let's you download a box from the net and boot it with one command.
-+ The VM can provision itself, installing or updating the latest packages when you build it.
-+ The VM will contain a directory that you can access from your host operating system. You can use your favorite Windows/Mac/Linux tools from that host, to edit and develop the software that runs on the VM while simultaneously running that software in the VM. In this way the things that change - your project code files - are kept out of and separated from the VM that runs the software. You can trash the box and rebuild it without your project being touched.
+### Preparing Your System
 
-### Specifics for the Humanoid Project
+##### 1) Install the Desktop version of Ubuntu 12.04 LTS, x86_64 either as a virtual machine or on your physical computer.
 
-The VMs we will work with contain Ubuntu 12.04 LTS, on x86_64, with ROS Hydro. The current VMs can be considered alpha, so please chime in with ideas and constructive criticisms. At this time there are two choices: a base ROS Hydro box without a desktop, and a full ROS Hydro desktop box. We can run multiple VMs in communication with one another, as in a distributed ROS system with different machines for different supporting tasks.
+<a href="http://releases.ubuntu.com/12.04/">Images are available here</a>. If you need help installing Ubuntu, you are welcome to consult Mark Whelan at a meeting. It is important to allocate at least 2 Gb of RAM to your Ubuntu system so that you can complete the next steps. 
 
-### Quick Start
+##### 2) Within your running version of Ubuntu, install ROS Hydro.
 
-##### Preparing your machine for development with a ROS VM</em>
+The easiest way to do this is to go to a command line in your Ubuntu box and paste these commands as needed:
 
-+ Install <a href="https://www.virtualbox.org">Virtualbox</a>.
-+ After you have Virtualbox, install <a href="http://www.vagrantup.com">Vagrant</a>.
 
-##### Developing your ROS code with a Vagrant VM
+For a full install of ROS:
 
-[Instructions for Windows](Windows_Instructions.md)
+```sh
+curl https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/build_hydro_full.sh | sudo sh
+```
 
-[Instructions for Macintosh and Linux](MacLinux_Instructions.md)
+To install NLTK 3.0 and Nupic (not necessary unless you know you need them for your project):
 
-[Saving Time by Repackaging a Vagrant Box](saving_time.md)
+```sh
+curl https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/install_nltk_and_nupic.sh | sudo sh
+```
 
-Instructions for a physical machine (pending)
+Note that each of these commands can take a very long time to complete.
 
-### License
-
-pending...

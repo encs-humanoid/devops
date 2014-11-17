@@ -85,5 +85,8 @@ echo
 echo "Installing extras..."
 sudo apt-get -y install tree mg screen
 echo
+
+source $HOME/.bashrc
+
 echo "ROS install completed."
 echo

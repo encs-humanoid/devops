@@ -1,6 +1,23 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-based on the install procedure from http://wiki.ros.org/hydro/Installation/Ubuntu
+# based on the install procedure from http://wiki.ros.org/hydro/Installation/Ubuntu
+
+export CURRENT_USER=`whoami`
+if getent passwd vagrant > /dev/null 2>&1; then
+# we have a vagrant user
+  export USING_VAGRANT=1
+fi
+
+if [ $CURRENT_USER == 'root' -a $USING_VAGRANT ]; then
+  export USER=vagrant
+  export HOMEDIR=/home/vagrant
+else
+  export USER=$CURRENT_USER
+  export HOMEDIR=$HOME
+fi
+
+echo "Setting up ROS for $USER with home $HOMEDIR..."
+echo
 
 echo "Setting timezone..."
 sudo cp /usr/share/zoneinfo/America/New_York /etc/localtime
@@ -31,23 +48,20 @@ echo "Running rosdep init..."
 sudo rosdep init
 echo
 
-USER=`whoami`
-echo "Running rosdep update as $USER..."
-#su - $USER <<END
-rosdep update
-#END
+echo "Running rosdep update as $CURRENT_USER..."
+sudo -u $CURRENT_USER rosdep update
 echo
 
-echo "Adding the ROS setup to $USER's bashrc..."
-cat >> $HOME/.bashrc <<END
+echo "Adding the ROS setup to $CURRENT_USER's bashrc..."
+cat >> $HOMEDIR/.bashrc <<END
 
 # always source the ROS setup
 source /opt/ros/hydro/setup.bash
 END
 
-if [ -d /vagrant ];then
+if [ $USING_VAGRANT ];then
 
-cat >> $HOME/.bashrc <<END
+cat >> $HOMEDIR/.bashrc <<END
 
 # set local ROS-related environment variables
 if [ -f /vagrant/ros_local.cfg ]; then
@@ -57,7 +71,7 @@ END
 
 fi
 
-source $HOME/.bashrc
+source $HOMEDIR/.bashrc
 
 echo "Installing python-rosinstall..."
 sudo apt-get -y install python-rosinstall
@@ -66,9 +80,11 @@ echo
 # Next section is a hack to let some 3D programs work under Virtualbox
 # when device drivers aren't working correctly.
 # This will work, but 3D programs will be very slow.
-#echo "Enabling temporary workaround for 3D programs..."
-#echo "export LIBGL_ALWAYS_SOFTWARE=1" >> /etc/bash.bashrc
-#echo
+if [ $USING_VAGRANT ]; then
+  echo "Enabling temporary workaround for 3D programs on Virtualbox..."
+  sudo bash -c 'echo "export LIBGL_ALWAYS_SOFTWARE=1" >> /etc/bash.bashrc'
+  echo
+fi
 
 echo "Installing needed extras..."
 sudo apt-get -y install make git

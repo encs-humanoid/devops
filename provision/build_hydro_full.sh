@@ -16,7 +16,7 @@ echo
 
 echo "Updating the package list..."
 # next, avoid hddtemp prompt
-echo "hddtemp hddtemp/daemon boolean false" | debconf-set-selections
+echo "hddtemp hddtemp/daemon boolean false" | sudo debconf-set-selections
 sudo apt-get -y update
 echo
 

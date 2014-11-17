@@ -57,9 +57,6 @@ END
 
 fi
 
-source $HOME/.bashrc
-echo
-
 echo "Installing python-rosinstall..."
 sudo apt-get -y install python-rosinstall
 echo

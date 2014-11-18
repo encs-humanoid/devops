@@ -28,10 +28,16 @@ For a full install of ROS:
 curl https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/build_hydro_full.sh | sh
 ```
 
-To install NLTK 3.0 and Nupic (not necessary unless you know you need them for your project):
+To install NLTK 3.0 (optional, depending on your project):
 
 ```sh
-curl https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/install_nltk_and_nupic.sh | sh
+curl https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/install_nltk.sh | sh
+```
+
+To install Nupic (not necessary unless you know you need it for your project):
+
+```sh
+curl https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/install_nupic.sh | sh
 ```
 
 Note that each of these commands can take a very long time to complete.

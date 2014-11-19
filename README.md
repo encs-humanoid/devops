@@ -29,7 +29,7 @@ The easiest way to do this is to go to a command line in your Ubuntu box and pas
 curl https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/build_hydro_full.sh | sh
 ```
 
-Be aware that this command can take a very long time to complete.
+Be aware that this command can take a very long time to finish.
 
 ##### 3) Complete any optional installations.
 

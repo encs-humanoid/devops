@@ -5,13 +5,17 @@ ENCS Humanoid / Devops
 
 ### A System for Development
 
-We are standardizing our systems and subsystems to use the <a href="http://wiki.ros.org/hydro">Hydro</a> release of the <a href="http://ros.org">Robot Operating System (ROS)</a>. Because Ubuntu 12.04 LTS is the only Ubuntu OS that is both still supported and compatible with Hydro, we are asking that teams do their coding on <em>Ubuntu 12.04 LTS x86_64 Desktop</em> as much as is feasible. It can be installed on VMWare, Virtualbox, or a bare metal computer. For those using Virtualbox on Linux or Macintosh systems, [Vagrant](vagrant_overview.md) is recommended. Vagrant can be used with Windows as well, but some people find the setup to be less friendly.
+We are standardizing our systems and subsystems to use the <a href="http://wiki.ros.org/hydro">Hydro</a> release of the <a href="http://ros.org">Robot Operating System (ROS)</a>. Because Ubuntu 12.04 LTS is the only Ubuntu OS that is both still supported and compatible with Hydro, we are asking that teams do their coding on <em>Ubuntu 12.04 LTS x86_64 Desktop</em> as much as is feasible. It can be installed on VMWare, Virtualbox, or a bare metal computer. 
 
 We will run multiple distributed ROS systems in communication with one another, with different machines for different supporting tasks.
+
+For those using Linux or Macintosh computers, <a href="https://www.vagrantup.com">Vagrant</a> is recommended. [Our Vagrant setup](vagrant_overview.md) will install ROS for you. Vagrant can be used with Windows as well, but some people find the setup to be less friendly.
 
 <hr>
 
 ### Preparing Your System
+
+(Skip 1 and 2 if using Vagrant.)
 
 ##### 1) Install the Desktop version of Ubuntu 12.04 LTS, x86_64 either as a virtual machine or on your physical computer.
 

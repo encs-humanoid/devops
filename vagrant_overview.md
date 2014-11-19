@@ -1,8 +1,6 @@
 ENCS Humanoid / Devops
 ======
 
-test
-
 Configuration management for ROS/Linux machine instances, using Vagrant for development
 
 ### What is Vagrant?
@@ -11,7 +9,7 @@ You probably already use virtual machines in your work, either in the cloud or o
 
 So, if your team members each develop against copies of the same platform, you win.
 
-So what is Vagrant? Vagrant takes care of much of the grunt work of farming VMs, so that you can develop your robot, your vision system, your AI, and waste less time configuring and copying VMs around. 
+So what is Vagrant? Vagrant takes care of much of the grunt work of farming VMs, so that you can develop your robot, your vision system, your AI, and spend less time configuring and copying VMs around. 
 
 Vagrant leverages VirtualBox, and on top of it:
 

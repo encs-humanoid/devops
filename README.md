@@ -5,7 +5,7 @@ ENCS Humanoid / Devops
 
 ### A System for Development
 
-We are standardizing our systems and subsystems to use the <a href="http://wiki.ros.org/hydro">Hydro</a> release of the <a href="http://ros.org">Robot Operating System (ROS)</a>. Because Ubuntu 12.04 LTS is the only Ubuntu OS that is both still supported and compatible with Hydro, we are asking that teams do their coding on <em>Ubuntu 12.04 LTS x86_64 Desktop</em> as much as is feasible. It can be installed on VMWare, Virtualbox, or a baremetal computer.
+We are standardizing our systems and subsystems to use the <a href="http://wiki.ros.org/hydro">Hydro</a> release of the <a href="http://ros.org">Robot Operating System (ROS)</a>. Because Ubuntu 12.04 LTS is the only Ubuntu OS that is both still supported and compatible with Hydro, we are asking that teams do their coding on <em>Ubuntu 12.04 LTS x86_64 Desktop</em> as much as is feasible. It can be installed on VMWare, Virtualbox, or a bare metal computer.
 
 We will run multiple distributed ROS systems in communication with one another, with different machines for different supporting tasks.
 

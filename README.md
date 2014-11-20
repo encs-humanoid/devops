@@ -19,7 +19,7 @@ For those using Linux or Macintosh computers, <a href="https://www.vagrantup.com
 
 ##### 1) Install the Desktop version of Ubuntu 12.04 LTS, x86_64 either as a virtual machine or on your physical computer.
 
-<a href="http://releases.ubuntu.com/12.04/">Images are available here</a>. Note that you will likely get a popup message inviting you to upgrade your system to Ubuntu 14 LTS 'Trusty Tahr', and that you should choose <em>"Don't Upgrade"</em>. the If you need help installing Ubuntu, you are welcome to consult Mark Whelan at a meeting.
+<a href="http://releases.ubuntu.com/12.04/">Images are available here</a>. Note that you will likely get a popup message inviting you to upgrade your system to Ubuntu 14 LTS 'Trusty Tahr', and that you should choose <em>"Don't Upgrade"</em>. If you need help installing Ubuntu, you are welcome to consult Mark Whelan at a meeting.
 
 ##### 2) Within your running version of Ubuntu, install the full verion of ROS Hydro.
 

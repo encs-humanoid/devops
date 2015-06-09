@@ -6,8 +6,8 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  # We'll use a generic Ubuntu 12.04 LTS box
-  config.vm.box = "hashicorp/precise64"
+  # We'll use a generic Ubuntu 14.04 LTS box
+  config.vm.box = "hashicorp/trusty64"
 
   # When working as a team with VMs on separate computers, add a line such as one of these:
   # config.vm.network "public_network"                                            # let DHCP take care of addressing
@@ -16,6 +16,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.network "public_network", ip: "192.168.2.200", mac: "080027205523"  # force both
 
   # ROS Hydro base is installed by a very simple shell script
-  config.vm.provision :shell, path: "https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/build_hydro_base.sh"
+  config.vm.provision :shell, path: "https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/build_indigo_base.sh"
 
 end

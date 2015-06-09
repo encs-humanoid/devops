@@ -6,16 +6,16 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  # This is a full desktop box for Ubuntu Precise
-  config.vm.box = "box-cutter/ubuntu1204-desktop"
+  # This is a full desktop box for Ubuntu Trusty
+  config.vm.box = "box-cutter/ubuntu1404-desktop"
 
-  # When working as a team with VMs on separate computers, add a line such as one of these:   
+  # When working as a team with VMs on separate computers, add a line such as one of these:
   # config.vm.network "public_network"                                            # let DHCP take care of addressing
   # config.vm.network "public_network", ip: "192.168.2.200"                       # force an IP address
-  # config.vm.network "public_network", mac: "080027205523"                       # force a MAC address, so DHCP can set a static address  
+  # config.vm.network "public_network", mac: "080027205523"                       # force a MAC address, so DHCP can set a static address
   # config.vm.network "public_network", ip: "192.168.2.200", mac: "080027205523"  # force both
 
   # ROS Hydro full desktop is installed by a very simple shell script
-  config.vm.provision :shell, path: "https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/build_hydro_full.sh"
+  config.vm.provision :shell, path: "https://raw.githubusercontent.com/encs-humanoid/devops/master/provision/build_indigo_full.sh"
 
 end

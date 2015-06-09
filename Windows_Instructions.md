@@ -19,7 +19,7 @@ The appropriate virtual machine will be pulled from the net, started, and provis
 
 The virtual machine's desktop should appear. If you need it, the password is "vagrant"
 
-<a href="http://wiki.ros.org/hydro">ROS Hydro Medusa</a> will be installed.
+<a href="http://wiki.ros.org/indigo">ROS Indigo Igloo</a> will be installed.
 
 You may edit your code directly in your own physical machine's OS, in the directory you created, with your favorite editors. The virtual machine will see your code directory as "/vagrant" in the Linux environment. In this way your code is separated from the virtual machine.
 

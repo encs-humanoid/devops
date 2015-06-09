@@ -20,7 +20,7 @@ vagrant box add <box-name>.box --name <box-name>
 Now you can reuse this box in your project. To do this, change your Vagrantfile. First, change the line
 
 ```sh
-config.vm.box = "box-cutter/ubuntu1204-desktop"
+config.vm.box = "box-cutter/ubuntu1404-desktop"
 ```
 
 to 
@@ -69,7 +69,7 @@ Now, at last, you can reuse the box in your project. To do this, change your Vag
 First, change the line 
 
 ```sh
-config.vm.box = "box-cutter/ubuntu1204-desktop"
+config.vm.box = "box-cutter/ubuntu1404-desktop"
 ```
 
 to 

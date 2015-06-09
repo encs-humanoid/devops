@@ -32,9 +32,9 @@ You can shell into the VM with:
 $ vagrant ssh
 ```
 
-<a href="http://wiki.ros.org/hydro">ROS Hydro Medusa</a> will be installed.
+<a href="http://wiki.ros.org/indigo">ROS Indigo Igloo</a> will be installed.
 
-You may edit your code directly in your own physical machine's OS, in the directory you created, with your favorite editors. The virtual machine will see your code directory as "/vagrant" in the Linux environment. In this way your code is separated from the virtual machine. If you are working with the full desktop version and you find you need the password, it is "vagrant".
+You may edit your code directly in your own physical machine's OS, in the directory you created, with your favorite editors. The virtual machine will see your code directory as "/vagrant" in the Linux guest environment. In this way your code is separated from the virtual machine. If you are working with the full desktop version and you find you need the password, it is "vagrant".
 
 You can stop the VM with:
 

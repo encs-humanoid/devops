@@ -19,7 +19,7 @@ Vagrant leverages VirtualBox, and on top of it:
 
 ### Specifics for the Humanoid Project
 
-The VMs we will work with contain Ubuntu 12.04 LTS, on x86_64, with ROS Hydro. The current VMs can be considered alpha, so please chime in with ideas and constructive criticisms. At this time there are two choices: a base ROS Hydro box without a desktop, and a full ROS Hydro desktop box. We can run multiple VMs in communication with one another, as in a distributed ROS system with different machines for different supporting tasks.
+The VMs we will work with contain Ubuntu 14.04 LTS, on x86_64, with ROS Indigo. The current VMs can be considered alpha, so please chime in with ideas and constructive criticisms. At this time there are two choices: a base ROS Indigo box without a desktop, and a full ROS Indigo desktop box. We can run multiple VMs in communication with one another, as in a distributed ROS system with different machines for different supporting tasks.
 
 ### Quick Start
 

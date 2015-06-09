@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# based on the install procedure from http://wiki.ros.org/hydro/Installation/Ubuntu
+# based on the install procedure from http://wiki.ros.org/indigo/Installation/Ubuntu
 
 echo "Setting timezone..."
 cp /usr/share/zoneinfo/America/New_York /etc/localtime
 echo
 
 echo "Getting the ROS latest list..."
-sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
+sh -c 'echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list'
 echo
 
 echo "Adding the ROS key..."
@@ -19,11 +19,11 @@ apt-get update
 echo
 
 # for ROS base:
-echo "Installing the ROS Hydro base..."
-apt-get -y install ros-hydro-ros-base
+echo "Installing the ROS Indigo base..."
+apt-get -y install ros-indigo-ros-base
 echo
 
-apt-cache search ros-hydro
+apt-cache search ros-indigo
 
 echo "Running rosdep init..."
 rosdep init
@@ -39,7 +39,7 @@ echo "Adding the ROS setup to the vagrant user's bashrc..."
 cat >> /home/vagrant/.bashrc <<END
 
 # always source the ROS setup
-source /opt/ros/hydro/setup.bash
+source /opt/ros/indigo/setup.bash
 
 # set local ROS-related environment variables
 if [ -f /vagrant/ros_local.cfg ]; then

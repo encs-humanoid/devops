@@ -2,9 +2,9 @@
 
 #===================================================================
 # Script to install NLTK 3.0
-# Intended for use on Ubuntu 12.04 LTS, x86_64
+# Intended for use on Ubuntu 14.04 LTS, x86_64
 #
-# Copyright 2014, IEEE ENCS Humanoid Robot Project
+# Copyright 2015, IEEE ENCS Humanoid Robot Project
 #===================================================================
 
 echo "Installing useful extra packages..."
